@@ -1,19 +1,17 @@
 <?php
-    class Employee{
+    class Temperature{
 
         // Connection
         private $conn;
 
         // Table
-        private $db_table = "Employee";
+        private $db_table = "temperature";
 
         // Columns
         public $id;
-        public $name;
-        public $email;
-        public $age;
-        public $designation;
-        public $created;
+        public $temperature;
+        public $humidity;
+
 
         // Db connection
         public function __construct($db){
@@ -22,7 +20,7 @@
 
         // GET ALL
         public function getEmployees(){
-            $sqlQuery = "SELECT id, name, email, age, designation, created FROM " . $this->db_table . "";
+            $sqlQuery = "SELECT id, temperature, humidity FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
             return $stmt;
