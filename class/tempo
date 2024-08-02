@@ -19,7 +19,7 @@
         }
 
         // GET ALL
-        public function getEmployees(){
+        public function getTemperature(){
             $sqlQuery = "SELECT id, temperature, humidity FROM " . $this->db_table . "";
             $stmt = $this->conn->prepare($sqlQuery);
             $stmt->execute();
@@ -27,7 +27,7 @@
         }
 
         // CREATE
-        public function createEmployee(){
+        public function createTemperature(){
             $sqlQuery = "INSERT INTO
                         ". $this->db_table ."
                     SET
